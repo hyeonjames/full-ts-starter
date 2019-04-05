@@ -1,4 +1,5 @@
 var path = require('path');
+var htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry : "./front/app.tsx",
     output : {
@@ -21,12 +22,22 @@ module.exports = {
                     configFile : "front.tsconfig.json"
                 }
             },
-            { enforce : "pre", test : /\.js$/, loader : "source-map-loader"}
+            { enforce : "pre", test : /\.js$/, loader : "source-map-loader"},
+            {
+                test : /\.css$/,
+                use : ['style-loader', 'css-loader']
+            }
         ]
     },
     externals : {
         "react" : "React",
         "react-dom" : "ReactDOM"
     },
-    mode : "development"
+    plugins: [
+        new htmlWebpackPlugin({
+            template: path.join(__dirname, 'front/index.html'),
+            filename : path.join(__dirname, 'dist/public/index.html')
+        })
+    ],
+    mode : "production"
 }
