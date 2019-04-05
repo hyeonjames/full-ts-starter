@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "target": "es5",                       
+        "module": "esnext",                    
+        "sourceMap": true,                     
+        "outDir": "./dist",                     
+        "rootDir": "./front",                     
+        "strict": true,                          
+        "esModuleInterop": true,
+        "jsx" : "react",
+        "allowJs" : true,
+        "moduleResolution" : "node",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "importHelpers": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": false,
+        "resolveJsonModule": true,
+        "lib" : ["es6", "dom"]
+    },
+    "include" : [
+      "front", "com"
+    ],
+    "exclude": [
+      "./node_modules"
+    ]
+  }
+  
